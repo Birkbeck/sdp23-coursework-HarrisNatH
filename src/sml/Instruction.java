@@ -4,8 +4,13 @@ package sml;
 
 /**
  * Represents an abstract instruction.
- *
- * @author ...
+ * It has 2 protected variables : label and opcode
+ * and 1 public variable : NORMAL_PROGRAM_COUNTER_UPDATE
+ * @param Instruction to instantiate the variables
+ * @param getLabel() returns label
+ * @param getOpcode() returns opcode
+ * @param getLabelString() if label is null, return an empty "" otherwise :
+ * @author Harris
  */
 public abstract class Instruction {
 	protected final String label;
@@ -50,6 +55,12 @@ public abstract class Instruction {
 
 	// TODO: What does abstract in the declaration below mean?
 	//       (Write a short explanation.)
+	/**
+	 * it means this method has no method implementation, and can not be instantiated
+	 * to use an abstract method, it needs to be extended by other class, 
+	 * and implement the code in the method body.
+	 * @param toString() returns a string as a string
+	 */
 	@Override
 	public abstract String toString();
 
