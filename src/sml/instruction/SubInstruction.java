@@ -7,16 +7,7 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
- * A subclass for Instruction class, specialized for add operation
- * In addition, this subclass has result and source variables
- * @param AddInstruction() takes label, result, and source
- * 			returns instantiated variables
- * @param execute() abstract method inherited from Parent class (Instruction class)
- * 			takes both result and source, execute a program
- * 			returns result and added values (result+source)
- * @param toString() another abstract method inherited from Parent class
- * 			returns "" or : based on getLabel + opcode + result + source
- * @author Harris
+ * @author
  */
 
 public class AddInstruction extends Instruction {
