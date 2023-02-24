@@ -6,7 +6,12 @@ import java.util.stream.Collectors;
 // TODO: write a JavaDoc for the class
 
 /**
- *
+ * this class uses HashMap for <Register, Integer>
+ * Register enum has 8 different names
+ * @param Registers() intiate clear() method
+ * @param clear() which takes for each register in the map, put 0 as value
+ * @param set() assigns [register and value]
+ * 
  * @author ...
  */
 public final class Registers {

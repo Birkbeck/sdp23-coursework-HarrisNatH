@@ -7,7 +7,7 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
- * A subclass for Instruction class, specialized for substraction operation
+ * A subclass for Instruction class, specialized for divide operation
  * In addition, this subclass has result and source variables
  * @param DivInstruction() takes label, result, and source
  * 			returns instantiated variables

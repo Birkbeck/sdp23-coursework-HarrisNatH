@@ -7,40 +7,43 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
- * A subclass for Instruction class, specialized for Multiplication operation
+ * A subclass for Instruction class, specialized for jump operation
  * In addition, this subclass has result and source variables
- * @param MulInstruction() takes label, result, and source
+ * @param JnzInstruction() takes label, result, and source
  * 			returns instantiated variables
  * @param execute() abstract method inherited from Parent class (Instruction class)
  * 			takes both result and source, execute a program
- * 			returns result and product values (result * source)
+ * 			where if the result register content is not zero,
+ * 			return the String jump as next statement to be executed
  * @param toString() another abstract method inherited from Parent class
  * 			returns "" or : based on getLabel + opcode + result + source
  * @author Harris
  */
 
-public class MulInstruction extends Instruction {
+public class JnzInstruction extends Instruction {
 	private final RegisterName result;
-	private final RegisterName source;
+	private final String labelAddress;
 
-	public static final String OP_CODE = "mul";
+	public static final String OP_CODE = "jnz";
 
-	public MulInstruction(String label, RegisterName result, RegisterName source) {
+	public JnzInstruction(String label, RegisterName result, String labelAddress) {
 		super(label, OP_CODE);
 		this.result = result;
-		this.source = source;
+		this.labelAddress = labelAddress;
 	}
 
 	@Override
 	public int execute(Machine m) {
 		int value1 = m.getRegisters().get(result);
-		int value2 = m.getRegisters().get(source);
-		m.getRegisters().set(result, value1 * value2);
+		if (value1 != 0){
+			labels.getAddress(labelAddress);
+		}
+		m.getRegisters().set(result, label);
 		return NORMAL_PROGRAM_COUNTER_UPDATE;
 	}
 
 	@Override
 	public String toString() {
-		return getLabelString() + getOpcode() + " " + result + " " + source;
+		return getLabelString() + getOpcode() + " " + result + " " + ;
 	}
 }

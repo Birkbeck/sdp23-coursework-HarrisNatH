@@ -7,13 +7,13 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
- * A subclass for Instruction class, specialized for add operation
+ * A subclass for Instruction class, specialized for move / load operation
  * In addition, this subclass has result and source variables
  * @param MovInstruction() takes label, result, and value
  * 			returns instantiated variables
  * @param execute() abstract method inherited from Parent class (Instruction class)
  * 			takes both result and value, execute a program
- * 			returns the integer x (value) set as result registerName 
+ * 			returns the integer x (value) stored in result registerName 
  * @param toString() another abstract method inherited from Parent class
  * 			returns "" or : based on getLabel + opcode + result + value
  * @author Harris

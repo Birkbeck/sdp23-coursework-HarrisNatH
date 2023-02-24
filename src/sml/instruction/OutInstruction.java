@@ -7,7 +7,7 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
- * A subclass for Instruction class, specialized for substraction operation
+ * A subclass for Instruction class, specialized for Output operation
  * In addition, this subclass only has result variable
  * @param OutInstruction() takes label, result
  * 			returns instantiated variables
