@@ -3,13 +3,12 @@ package sml;
 // TODO: write a JavaDoc for the class
 
 /**
- * Represents an abstract instruction.
+ * Represents an abstract instruction class to be implemented in other instructions subclasses.
  * It has 2 protected variables : label and opcode
  * and 1 public variable : NORMAL_PROGRAM_COUNTER_UPDATE
- * @param Instruction to instantiate the variables
- * @param getLabel() returns label
- * @param getOpcode() returns opcode
- * @param getLabelString() if label is null, return an empty "" otherwise :
+ * @param label is the line for other instructions to jump
+ * @param opcode is an instruction for the operation to be performed
+ * 
  * @author Harris
  */
 public abstract class Instruction {

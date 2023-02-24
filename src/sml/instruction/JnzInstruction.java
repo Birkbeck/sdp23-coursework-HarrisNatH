@@ -7,18 +7,14 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
- * A subclass for Instruction class, specialized for jump operation
- * In addition, this subclass has result and source variables
- * @param JnzInstruction() takes label, result, and source
- * 			returns instantiated variables
- * @param execute() abstract method inherited from Parent class (Instruction class)
- * 			takes both result and source, execute a program
- * 			where if the result register content is not zero,
- * 			return the String jump as next statement to be executed
- * @param toString() another abstract method inherited from Parent class
- * 			returns "" or : based on getLabel + opcode + result + source
- * @author Harris
- */
+* JnzInstruction is a subclass for Instruction class, specialized for address jump operation.
+* Moreover, this subclass has result 
+* 
+* @param label is the line for other instructions to jump.
+* @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
+* @return 
+* @author Harris
+*/
 
 public class JnzInstruction extends Instruction {
 	private final RegisterName result;
@@ -36,7 +32,9 @@ public class JnzInstruction extends Instruction {
 	public int execute(Machine m) {
 		int value1 = m.getRegisters().get(result);
 		if (value1 != 0){
-			labels.getAddress(labelAddress);
+			if(label == labelAddress){
+				label.getAddress(labelAddress);
+			}
 		}
 		m.getRegisters().set(result, label);
 		return NORMAL_PROGRAM_COUNTER_UPDATE;
@@ -44,6 +42,6 @@ public class JnzInstruction extends Instruction {
 
 	@Override
 	public String toString() {
-		return getLabelString() + getOpcode() + " " + result + " " + ;
+		return getLabelString() + getOpcode() + " " + result + " ";
 	}
 }

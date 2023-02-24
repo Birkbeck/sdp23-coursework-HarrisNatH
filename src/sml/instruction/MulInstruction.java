@@ -7,15 +7,14 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
- * A subclass for Instruction class, specialized for Multiplication operation
+ * MulInstruction is a subclass for Instruction class, specialized for multiplication operation.
  * In addition, this subclass has result and source variables
- * @param MulInstruction() takes label, result, and source
- * 			returns instantiated variables
- * @param execute() abstract method inherited from Parent class (Instruction class)
- * 			takes both result and source, execute a program
- * 			returns result and product values (result * source)
- * @param toString() another abstract method inherited from Parent class
- * 			returns "" or : based on getLabel + opcode + result + source
+ * 
+ * @param label is the line for other instructions to jump.
+ * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
+ * @param source is the rightmost RegisterName that contains one of 8 registers, contains an int number
+ * @return the product of both int values and set as {@code result} int value
+ * 
  * @author Harris
  */
 
