@@ -8,7 +8,8 @@ import sml.RegisterName;
 
 /**
  * MovInstruction is a subclass for Instruction class, specialized for move/load operation.
- * In addition, this subclass has result and value variables
+ * <p>
+ * Moreover, this subclass uses label, result and value variables
  * 
  * @param label is the line for other instructions to jump.
  * @param result is the leftmost RegisterName that contains one of 8 registers

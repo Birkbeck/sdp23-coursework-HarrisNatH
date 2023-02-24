@@ -8,7 +8,8 @@ import sml.RegisterName;
 
 /**
  * DivInstruction is a subclass for Instruction class, specialized for division operation.
- * In addition, this subclass has result and source variables
+ * <p>
+ * Moreover, this subclass uses label, result and source variables
  * 
  * @param label is the line for other instructions to jump.
  * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number

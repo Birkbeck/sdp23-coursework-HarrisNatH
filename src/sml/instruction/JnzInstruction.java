@@ -7,14 +7,14 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
-* JnzInstruction is a subclass for Instruction class, specialized for address jump operation.
-* Moreover, this subclass has result 
-* 
-* @param label is the line for other instructions to jump.
-* @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
-* @return 
-* @author Harris
-*/
+ * JnzInstruction is a subclass for Instruction class, specialized for address jump operation.
+ * Moreover, this subclass has result 
+ * 
+ * @param label is the line for other instructions to jump.
+ * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
+ * @return 
+ * @author Harris
+ */
 
 public class JnzInstruction extends Instruction {
 	private final RegisterName result;

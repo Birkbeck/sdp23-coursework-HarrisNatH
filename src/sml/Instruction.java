@@ -11,6 +11,7 @@ package sml;
  * 
  * @author Harris
  */
+
 public abstract class Instruction {
 	protected final String label;
 	protected final String opcode;
@@ -54,11 +55,11 @@ public abstract class Instruction {
 
 	// TODO: What does abstract in the declaration below mean?
 	//       (Write a short explanation.)
-	/**
+	/*
 	 * it means this method has no method implementation, and can not be instantiated
 	 * to use an abstract method, it needs to be extended by other class, 
 	 * and implement the code in the method body.
-	 * @param toString() returns a string as a string
+	 * toString() returns a string as a string
 	 */
 	@Override
 	public abstract String toString();

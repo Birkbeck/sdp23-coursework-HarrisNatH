@@ -7,15 +7,16 @@ import sml.RegisterName;
 // TODO: write a JavaDoc for the class
 
 /**
-* OutInstruction is a subclass for Instruction class, specialized for Output operation.
-* Moreover, this subclass only has result variable
-* 
-* @param label is the line for other instructions to jump.
-* @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
-* @return the integer assigned on {@code result}
-* 
-* @author Harris
-*/
+ * OutInstruction is a subclass for Instruction class, specialized for Output operation.
+ * <p>
+ * Moreover, this subclass uses label, and result variables
+ * 
+ * @param label is the line for other instructions to jump.
+ * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
+ * @return the integer assigned on {@code result}
+ * 
+ * @author Harris
+ */
 
 public class OutInstruction extends Instruction {
 	private final RegisterName result;
