@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * @param clear() which takes for each register in the map, put 0 as value
  * @param set() assigns [register and value]
  * 
- * @author ...
+ * @author Harris
  */
 public final class Registers {
     private final Map<Register, Integer> registers = new HashMap<>();

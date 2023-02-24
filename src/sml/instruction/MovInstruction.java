@@ -21,11 +21,11 @@ import sml.RegisterName;
 
 public class MovInstruction extends Instruction {
 	private final RegisterName result;
-	private final int value;
+	private final Integer value;
 
 	public static final String OP_CODE = "mov";
 
-	public MovInstruction(String label, RegisterName result, int value) {
+	public MovInstruction(String label, RegisterName result, Integer value) {
 		super(label, OP_CODE);
 		this.result = result;
 		this.value = value;
