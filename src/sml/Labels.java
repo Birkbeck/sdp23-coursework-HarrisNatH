@@ -9,8 +9,11 @@ import java.util.stream.Collectors;
 
 /**
  * a Hashmap class with String {@code label} and {@code address} associated to the label.
- * checks if there is a duplicate before storing in map.
- * checks the content of label if null throws exception.
+ * <p>the addLabel method checks if there is a duplicate before storing in map.
+ * <p>the getAddress method checks the content of label if null throws exception.
+ * <p>the toString method returns a list of labels Map
+ * <p>the equals boolean returns a match of the same type of labels 
+ * <p>the reset method to clear all the mappings in the labels Map 
  * @author Harris
  */
 public final class Labels {
@@ -69,9 +72,18 @@ public final class Labels {
 
 	// TODO: Implement equals and hashCode (needed in class Machine).
 	@Override
-    public int hashCode() {
-        return labels.hashCode();
-    }
+	public boolean equals(Object o) {
+		if (o instanceof Labels) {
+			Labels other = (Labels) o;
+			return labels.equals(other.labels);
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return labels.hashCode();
+	}
 
 	/**
 	 * Removes the labels

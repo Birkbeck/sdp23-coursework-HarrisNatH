@@ -6,11 +6,12 @@ import java.util.stream.Collectors;
 // TODO: write a JavaDoc for the class
 
 /**
- * this class uses HashMap for <Register, Integer>
- * Register enum has 8 different names
- * @param Registers() intiate clear() method
- * @param clear() which takes for each register in the map, put 0 as value
- * @param set() assigns [register and value]
+ * this class uses HashMap for Register and Integer.
+ * <p> Register enum has 8 different names
+ * <p> the set method puts in each register with assigned value in the Map
+ * <p> the get method returns register name that is found in the Map
+ * <p> the equals boolean returns true if there is a match between o and registers
+ * <p> the toString method returns a list of registers Map using stream
  * 
  * @author Harris
  */
