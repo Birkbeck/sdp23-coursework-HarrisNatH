@@ -3,12 +3,15 @@ package sml;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 // TODO: write a JavaDoc for the class
 
 /**
- *
- * @author ...
+ * a Hashmap class with String {@code label} and {@code address} associated to the label.
+ * checks if there is a duplicate before storing in map.
+ * checks the content of label if null throws exception.
+ * @author Harris
  */
 public final class Labels {
 	private final Map<String, Integer> labels = new HashMap<>();
@@ -22,7 +25,11 @@ public final class Labels {
 	public void addLabel(String label, int address) {
 		Objects.requireNonNull(label);
 		// TODO: Add a check that there are no label duplicates.
-		labels.put(label, address);
+		if (labels.containsKey(label) == true){
+			throw new NullPointerException();
+		}else{
+			labels.put(label, address);
+		}
 	}
 
 	/**
@@ -34,8 +41,15 @@ public final class Labels {
 	public int getAddress(String label) {
 		// TODO: Where can NullPointerException be thrown here?
 		//       (Write an explanation.)
+			/* NullPointerException if the label found null
+			* otherwise the program fetch the label
+			*/
 		//       Add code to deal with non-existent labels.
-		return labels.get(label);
+		if (label == null){
+			throw new NullPointerException();
+		}else{
+			return labels.get(label);
+		}
 	}
 
 	/**
@@ -47,10 +61,17 @@ public final class Labels {
 	@Override
 	public String toString() {
 		// TODO: Implement the method using the Stream API (see also class Registers).
-		return "";
+		return labels.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .map(e -> e.getKey() + " -> " + e.getValue())
+                .collect(Collectors.joining(", ", "[", "]")) ;
 	}
 
 	// TODO: Implement equals and hashCode (needed in class Machine).
+	@Override
+    public int hashCode() {
+        return labels.hashCode();
+    }
 
 	/**
 	 * Removes the labels
