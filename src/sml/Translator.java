@@ -11,11 +11,12 @@ import java.util.Scanner;
 import static sml.Registers.Register;
 
 /**
- * This class ....
+ * This class is designed for translating opcode program and outputs the result from arithmetic operation
  * <p>
+ * Translator takes a fileName to read each lines in it, returns opcode instructions depends on the type it reads
+ * and add labels into program
  * The translator of a <b>S</b><b>M</b>al<b>L</b> program.
- *
- * @author ...
+ * @author Harris
  */
 public final class Translator {
 
@@ -103,6 +104,10 @@ public final class Translator {
                 return new MovInstruction(label, Register.valueOf(r), value);
             }
 
+            case JnzInstruction.OP_CODE -> {
+                String r = scan();
+                return new JnzInstruction(label, Register.valueOf(r), labelJump);
+            }
 
             // TODO: Then, replace the switch by using the Reflection API
 

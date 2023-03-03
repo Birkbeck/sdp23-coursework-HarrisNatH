@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * <p>the addLabel method checks if there is a duplicate before storing in map.
  * <p>the getAddress method checks the content of label if null throws exception.
  * <p>the toString method returns a list of labels Map
- * <p>the equals boolean returns a match of the same type of labels 
+ * <p>the equals boolean returns true if there is a match between o and labels
  * <p>the reset method to clear all the mappings in the labels Map 
  * @author Harris
  */

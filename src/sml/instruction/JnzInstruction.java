@@ -8,7 +8,7 @@ import sml.RegisterName;
 
 /**
  * JnzInstruction is a subclass for Instruction class, specialized for address jump operation.
- * Moreover, this subclass has result 
+ * Moreover, this subclass has result and 
  * 
  * @param label is the line for other instructions to jump.
  * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
@@ -18,30 +18,27 @@ import sml.RegisterName;
 
 public class JnzInstruction extends Instruction {
 	private final RegisterName result;
-	private final String labelAddress;
+	private final String labelJump;
 
 	public static final String OP_CODE = "jnz";
 
-	public JnzInstruction(String label, RegisterName result, String labelAddress) {
+	public JnzInstruction(String label, RegisterName result, String labelJump) {
 		super(label, OP_CODE);
 		this.result = result;
-		this.labelAddress = labelAddress;
+		this.labelJump = labelJump;
 	}
 
 	@Override
 	public int execute(Machine m) {
-		int value1 = m.getRegisters().get(result);
-		if (value1 != 0){
-			if(label == labelAddress){
-				label.getAddress(labelAddress);
-			}
+		int value = m.getRegisters().get(result);
+		if (value != 0){
+			m.getLabels();
 		}
-		m.getRegisters().set(result, label);
 		return NORMAL_PROGRAM_COUNTER_UPDATE;
 	}
 
 	@Override
 	public String toString() {
-		return getLabelString() + getOpcode() + " " + result + " ";
+		return getLabelString() + getOpcode() + " " + result + " " + labelJump;
 	}
 }
