@@ -17,28 +17,28 @@ import sml.RegisterName;
  */
 
 public class JnzInstruction extends Instruction {
-	private final RegisterName result;
+	private final RegisterName condition;
 	private final String labelJump;
 
 	public static final String OP_CODE = "jnz";
 
-	public JnzInstruction(String label, RegisterName result, String labelJump) {
+	public JnzInstruction(String label, RegisterName condition, String labelJump) {
 		super(label, OP_CODE);
-		this.result = result;
+		this.condition = condition;
 		this.labelJump = labelJump;
 	}
 
 	@Override
 	public int execute(Machine m) {
-		int value = m.getRegisters().get(result);
+		int value = m.getRegisters().get(condition);
 		if (value != 0){
-			m.getLabels();
+			return m.getLabels().getAddress(labelJump);
 		}
 		return NORMAL_PROGRAM_COUNTER_UPDATE;
 	}
 
 	@Override
 	public String toString() {
-		return getLabelString() + getOpcode() + " " + result + " " + labelJump;
+		return getLabelString() + getOpcode() + " " + condition + " " + labelJump;
 	}
 }
