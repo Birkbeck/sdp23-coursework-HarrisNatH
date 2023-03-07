@@ -75,14 +75,14 @@ public final class Labels {
 	public boolean equals(Object o) {
 		if (o instanceof Labels) {
 			Labels other = (Labels) o;
-			return labels.equals(other.labels);
+			return Objects.equals(this.labels, other.labels);
 		}
 		return false;
 	}
 
 	@Override
 	public int hashCode() {
-		return labels.hashCode();
+		return Objects.hashCode(labels);
 	}
 
 	/**
