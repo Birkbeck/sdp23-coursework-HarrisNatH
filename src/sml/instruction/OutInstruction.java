@@ -30,8 +30,8 @@ public class OutInstruction extends Instruction {
 
 	@Override
 	public int execute(Machine m) {
-		int value1 = m.getRegisters().get(result);
-		m.getRegisters().set(result, value1);
+		int value = m.getRegisters().get(result);
+		System.out.println(value);
 		return NORMAL_PROGRAM_COUNTER_UPDATE;
 	}
 
