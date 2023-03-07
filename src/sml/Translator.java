@@ -106,6 +106,7 @@ public final class Translator {
 
             case JnzInstruction.OP_CODE -> {
                 String r = scan();
+                String labelJump = scan();
                 return new JnzInstruction(label, Register.valueOf(r), labelJump);
             }
 
