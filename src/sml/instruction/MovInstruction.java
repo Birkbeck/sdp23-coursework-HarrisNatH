@@ -3,6 +3,7 @@ package sml.instruction;
 import sml.Instruction;
 import sml.Machine;
 import sml.RegisterName;
+import java.util.Objects;
 
 // TODO: write a JavaDoc for the class
 
@@ -40,5 +41,21 @@ public class MovInstruction extends Instruction {
 	@Override
 	public String toString() {
 		return getLabelString() + getOpcode() + " " + result + " " + value;
+	}
+
+	@Override
+	public boolean equals(Object o){
+		if (o instanceof MovInstruction) {
+			MovInstruction other = (MovInstruction) o;
+			return Objects.equals(this.label, other.label)
+					&& Objects.equals(this.result, other.result)
+					&& Objects.equals(this.value, other.value);
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode(){
+		return Objects.hash(label, result, value);
 	}
 }
