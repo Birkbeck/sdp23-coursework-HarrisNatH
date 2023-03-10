@@ -11,13 +11,19 @@ import java.util.Scanner;
 import static sml.Registers.Register;
 
 /**
- * This class is designed for translating opcode program and outputs the result from arithmetic operation
+ * This class 
+ *          is designed for translating opcode program and outputs the result from 
+ *          arithmetic operation.
  * <p>
- * Translator takes a fileName to read each lines in it, returns opcode instructions depends on the type it reads
- * and add labels into program
+ * represents the translator. Takes a fileName to read each lines in it, 
+ *          returns sml instructions depends on the opcode it reads and 
+ *          execute by switch case - scanning and returns back new Register.
+ * <p>
  * The translator of a <b>S</b><b>M</b>al<b>L</b> program.
+ * 
  * @author Harris
  */
+
 public final class Translator {
 
     private final String fileName; // source file of SML code

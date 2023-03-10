@@ -8,14 +8,7 @@ import java.util.Objects;
 // TODO: write a JavaDoc for the class
 
 /**
- * MulInstruction is a subclass for Instruction class, specialized for multiplication operation.
- * <p>
- * Moreover, this subclass uses label, result and source variables
- *  
- * @param label is the line for other instructions to jump.
- * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
- * @param source is the rightmost RegisterName that contains one of 8 registers, contains an int number
- * @return the product of both int values and set as {@code result} int value
+ * MulInstruction implements the multiplication r1 r2 operation.
  * 
  * @author Harris
  */
@@ -26,12 +19,26 @@ public class MulInstruction extends Instruction {
 
 	public static final String OP_CODE = "mul";
 
+	/**
+	 * @param label is the line for other instructions to jump.
+	 * @param result register containing one value to be multiplied by r2. 
+	 * 					The result of the multiplication is written here.
+	 * @param source register containing one value to multiply to r1.
+	 * @return new MulInstruction instance.
+	 **/
 	public MulInstruction(String label, RegisterName result, RegisterName source) {
 		super(label, OP_CODE);
 		this.result = result;
 		this.source = source;
 	}
 
+	/**
+	 * Execute the multiplication operation by reading the values in the result and source registers, 
+	 * 			multiplying them up and writing the result into the result register.
+	 * 
+	 * @param m Machine object containing the current state of the registers.
+	 * @return NORMAL_PROGRAM_COUNTER_UPDATE.
+	 **/
 	@Override
 	public int execute(Machine m) {
 		int value1 = m.getRegisters().get(result);

@@ -8,14 +8,7 @@ import java.util.Objects;
 // TODO: write a JavaDoc for the class
 
 /**
- * MovInstruction is a subclass for Instruction class, specialized for move/load operation.
- * <p>
- * Moreover, this subclass uses label, result and value variables
- * 
- * @param label is the line for other instructions to jump.
- * @param result is the leftmost RegisterName that contains one of 8 registers
- * @param value is the Integer
- * @return the Integer set as {@code result} value
+ * MovInstruction implements the load r1 Integer operation.
  * 
  * @author Harris
  */
@@ -26,12 +19,25 @@ public class MovInstruction extends Instruction {
 
 	public static final String OP_CODE = "mov";
 
+	/**
+	 * @param label is the line for other instructions to jump.
+	 * @param result register which Integer to be loaded/moved into. 
+	 * 					The result of the loading is written here.
+	 * @param value Integer to load into result register.
+	 * @return new MovInstruction instance.
+	 **/
 	public MovInstruction(String label, RegisterName result, Integer value) {
 		super(label, OP_CODE);
 		this.result = result;
 		this.value = value;
 	}
 
+	/**
+	 * Execute the load operation by moving the Integer value into the result register.
+	 * 
+	 * @param m Machine object containing the current state of the registers.
+	 * @return NORMAL_PROGRAM_COUNTER_UPDATE.
+	 **/
 	@Override
 	public int execute(Machine m) {
 		m.getRegisters().set(result, value);

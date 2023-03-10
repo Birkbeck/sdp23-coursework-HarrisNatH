@@ -8,14 +8,13 @@ import java.util.stream.Collectors;
 // TODO: write a JavaDoc for the class
 
 /**
- * a Hashmap class with String {@code label} and {@code address} associated to the label.
- * <p>the addLabel method checks if there is a duplicate before storing in map.
- * <p>the getAddress method checks the content of label if null throws exception.
- * <p>the toString method returns a list of labels Map
- * <p>the equals boolean returns true if there is a match between o and labels
- * <p>the reset method to clear all the mappings in the labels Map 
+ * Labels represents a HashMap that contains label and address.
+ * <p>
+ * An instance to add label and address, retrieving address and returning back as String.
+ * 
  * @author Harris
  */
+
 public final class Labels {
 	private final Map<String, Integer> labels = new HashMap<>();
 

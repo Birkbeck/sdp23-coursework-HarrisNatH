@@ -8,14 +8,7 @@ import java.util.Objects;
 // TODO: write a JavaDoc for the class
 
 /**
- * DivInstruction is a subclass for Instruction class, specialized for division operation.
- * <p>
- * Moreover, this subclass uses label, result and source variables
- * 
- * @param label is the line for other instructions to jump.
- * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
- * @param source is the rightmost RegisterName that contains one of 8 registers, contains an int number
- * @return the dividend of both int values and set as {@code result} int value
+ * DivInstruction implements the division r1 r2 operation.
  * 
  * @author Harris
  */
@@ -26,12 +19,26 @@ public class DivInstruction extends Instruction {
 
 	public static final String OP_CODE = "div";
 
+	/**
+	 * @param label is the line for other instructions to jump.
+	 * @param result register containing one value to be divided by r2. 
+	 * 					The result of the division is written here.
+	 * @param source register containing one value as the divisor.
+	 * @return new DivInstruction instance.
+	 **/
 	public DivInstruction(String label, RegisterName result, RegisterName source) {
 		super(label, OP_CODE);
 		this.result = result;
 		this.source = source;
 	}
 
+	/**
+	 * Execute the division operation by reading the values in the result and source registers, 
+	 * 			dividing them up and writing the result into the result register.
+	 * 
+	 * @param m Machine object containing the current state of the registers.
+	 * @return NORMAL_PROGRAM_COUNTER_UPDATE.
+	 **/
 	@Override
 	public int execute(Machine m) {
 		int value1 = m.getRegisters().get(result);

@@ -8,14 +8,7 @@ import java.util.Objects;
 // TODO: write a JavaDoc for the class
 
 /**
- * AddInstruction is a subclass for Instruction class, specialized for addition operation.
- * <p>
- * Moreover, this subclass uses label, result and source variables
- * 
- * @param label is the line for other instructions to jump.
- * @param result is the leftmost RegisterName that contains one of 8 registers, contains an int number
- * @param source is the rightmost RegisterName that contains one of 8 registers, contains an int number
- * @return the sum of both int values and set as {@code result} int value
+ * AddInstruction implements the add r1 r2 operation.
  * 
  * @author Harris
  */
@@ -26,12 +19,26 @@ public class AddInstruction extends Instruction {
 
 	public static final String OP_CODE = "add";
 
+	/**
+	 * @param label is the line for other instructions to jump.
+	 * @param result register containing one value to be added. 
+	 * 					The result of the addition is written here.
+	 * @param source register containing one value to add to r1.
+	 * @return new AddInstruction instance.
+	 **/
 	public AddInstruction(String label, RegisterName result, RegisterName source) {
 		super(label, OP_CODE);
 		this.result = result;
 		this.source = source;
 	}
 
+	/**
+	 * Execute the add operation by reading the values in the result and source registers, 
+	 * 			adding them up and writing the result into the result register.
+	 * 
+	 * @param m Machine object containing the current state of the registers.
+	 * @return NORMAL_PROGRAM_COUNTER_UPDATE.
+	 **/
 	@Override
 	public int execute(Machine m) {
 		int value1 = m.getRegisters().get(result);
