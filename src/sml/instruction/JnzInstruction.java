@@ -45,8 +45,7 @@ public class JnzInstruction extends Instruction {
 
 	@Override
 	public boolean equals(Object o){
-		if (o instanceof JnzInstruction) {
-			JnzInstruction other = (JnzInstruction) o;
+		if (o instanceof JnzInstruction other) {
 			return Objects.equals(this.label, other.label)
 					&& Objects.equals(this.condition, other.condition)
 					&& Objects.equals(this.labelJump, other.labelJump);

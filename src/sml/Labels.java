@@ -73,8 +73,7 @@ public final class Labels {
 	// TODO: Implement equals and hashCode (needed in class Machine).
 	@Override
 	public boolean equals(Object o) {
-		if (o instanceof Labels) {
-			Labels other = (Labels) o;
+		if (o instanceof Labels other) {
 			return Objects.equals(this.labels, other.labels);
 		}
 		return false;

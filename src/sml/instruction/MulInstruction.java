@@ -47,8 +47,7 @@ public class MulInstruction extends Instruction {
 
 	@Override
 	public boolean equals(Object o){
-		if (o instanceof MulInstruction) {
-			MulInstruction other = (MulInstruction) o;
+		if (o instanceof MulInstruction other) {
 			return Objects.equals(this.label, other.label)
 					&& Objects.equals(this.result, other.result)
 					&& Objects.equals(this.source, other.source);
